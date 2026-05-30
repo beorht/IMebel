@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "templates": {
+    "sofa": {
+      "prompt_template": "Generate a SINGLE sofa furniture design. Style: {design_style}. Material: {material}. Color: {color}. Shape: {shape}. User design request: {extra_details}. Show ONLY one isolated furniture object. No room, no interior, no decor, no people. Pure white/transparent background. Product design render. Generate consistent FRONT VIEW, SIDE VIEW, TOP VIEW."
+    },
+    "wardrobe": {
+      "prompt_template": "Generate a SINGLE wardrobe design. Style: {design_style}. Material: {material}. Color: {color}. Door type: {door_type}. User design request: {extra_details}. One isolated furniture object only. No bedroom scene. White background. Generate FRONT VIEW, SIDE VIEW, TOP VIEW."
+    },
+    "kitchen_furniture": {
+      "prompt_template": "Generate a SINGLE kitchen furniture module. Style: {design_style}. Material: {material}. Color: {color}. Layout: {layout_type}. User design request: {extra_details}. One furniture object only. No kitchen environment. Pure background. Generate FRONT VIEW, SIDE VIEW, TOP VIEW."
+    },
+    "table": {
+      "prompt_template": "Generate a SINGLE table design. Style: {design_style}. Material: {material}. Color: {color}. Table type: {table_type}. User design request: {extra_details}. Single isolated object only. No room. White background. Generate FRONT VIEW, SIDE VIEW, TOP VIEW."
+    },
+    "chair": {
+      "prompt_template": "Generate a SINGLE chair design. Style: {design_style}. Material: {material}. Color: {color}. Chair type: {chair_type}. User design request: {extra_details}. One isolated furniture object only. No environment. Product render. Generate FRONT VIEW, SIDE VIEW, TOP VIEW."
+    }
+  }
+}

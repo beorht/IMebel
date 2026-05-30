@@ -1,0 +1,75 @@
+{
+  "nav_generate": "Генерация",
+  "nav_gallery": "Галерея",
+  "nav_models": "Модели",
+  "lang_switch": "EN",
+  "lang_label": "Язык",
+
+  "tab_free_prompt": "Свободный запрос",
+  "tab_furniture": "Мебель",
+
+  "prompt": "Запрос",
+  "prompt_hint": "Опишите изображение, которое хотите создать",
+  "prompt_placeholder": "Величественный киберпанк-город на закате, неоновые огни отражаются на мокрых улицах, высокая детализация...",
+  "negative_prompt": "Негативный запрос",
+  "negative_prompt_placeholder": "размыто, низкое качество, искажено, уродливо, деформировано",
+  "furniture_type": "Тип мебели",
+  "furniture_design_style": "Стиль дизайна",
+  "furniture_material": "Материал",
+  "furniture_color": "Цвет",
+  "furniture_extra_details": "Дополнительно",
+  "furniture_optional": "Необязательно",
+  "furniture_extra_details_placeholder": "Любые дополнительные требования к дизайну...",
+
+  "furniture_sofa": "Диван",
+  "furniture_wardrobe": "Шкаф",
+  "furniture_table": "Стол",
+  "furniture_chair": "Стул",
+  "furniture_kitchen": "Кухонный гарнитур",
+
+  "furniture_field_sofa": "Форма",
+  "furniture_field_wardrobe": "Тип дверей",
+  "furniture_field_table": "Тип стола",
+  "furniture_field_chair": "Тип стула",
+  "furniture_field_kitchen": "Планировка",
+
+  "furniture_placeholder_sofa": "напр. угловой, круглый, секционный",
+  "furniture_placeholder_wardrobe": "напр. раздвижной, распашной, складной",
+  "furniture_placeholder_table": "напр. обеденный, журнальный, письменный",
+  "furniture_placeholder_chair": "напр. кресло, табурет, качалка",
+  "furniture_placeholder_kitchen": "напр. Г-образная, П-образная, прямая",
+  "furniture_placeholder_style": "напр. современный, классический, минимализм",
+  "furniture_placeholder_material": "напр. дерево, металл, ткань",
+  "furniture_placeholder_color": "напр. белый, тёмно-коричневый",
+  "furniture_no_fields": "Заполните хотя бы одно поле",
+
+  "size": "Размер",
+  "style": "Стиль",
+  "quality": "Качество",
+  "images": "Изображения",
+  "quality_fast": "Быстро",
+  "quality_best": "Лучшее",
+
+  "btn_generate": "Сгенерировать",
+  "btn_generating": "Генерация...",
+  "btn_download": "Скачать",
+
+  "placeholder_title": "Сгенерированные изображения появятся здесь",
+  "placeholder_sub": "Введите запрос и нажмите «Сгенерировать»",
+
+  "size_512": "512 × 512",
+  "size_768": "768 × 768",
+  "size_1024": "1024 × 1024",
+
+  "style_realistic": "Реализм",
+  "style_anime": "Аниме",
+  "style_cyberpunk": "Киберпанк",
+  "style_digital_art": "Цифровое искусство",
+
+  "error_prompt_required": "Запрос обязателен",
+  "error_api": "Ошибка API. Используется офлайн-генерация.",
+
+  "angle_front": "Спереди",
+  "angle_side": "Сбоку",
+  "angle_top": "Сверху"
+}

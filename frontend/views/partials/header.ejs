@@ -1,0 +1,36 @@
+<header class="header">
+  <div class="header-left">
+    <div class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
+        <path d="M8 22L12 14L16 18L20 10L24 22H8Z" fill="white" opacity="0.9"/>
+        <defs>
+          <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+            <stop stop-color="#6366F1"/>
+            <stop offset="1" stop-color="#8B5CF6"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="logo-text"><span class="logo-accent">I</span>Mebel</span>
+    </div>
+    <nav class="nav-links">
+      <a href="/" class="nav-link active"><%= t('nav_generate') %></a>
+      <a href="#" class="nav-link"><%= t('nav_gallery') %></a>
+      <a href="#" class="nav-link"><%= t('nav_models') %></a>
+    </nav>
+  </div>
+  <div class="header-right">
+    <button class="lang-switch" data-locale="<%= locale === 'ru' ? 'en' : 'ru' %>" title="<%= t('lang_label') %>">
+      <%= t('lang_switch') %>
+    </button>
+    <button class="icon-btn settings-btn" title="Settings" aria-label="Settings">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M16.167 10.75a6.502 6.502 0 00.083-1.5l1.337-1.042a.323.323 0 00.074-.412l-1.267-2.192a.322.322 0 00-.395-.145l-1.577.634a6.474 6.474 0 00-1.292-.75L12.92 3.74a.323.323 0 00-.308-.24h-2.534a.323.323 0 00-.308.24l-.2 1.603a6.5 6.5 0 00-1.292.75l-1.577-.634a.322.322 0 00-.395.145L5.04 7.796a.323.323 0 00.074.412l1.337 1.042a6.502 6.502 0 000 1.5L5.113 11.792a.323.323 0 00-.074.412l1.267 2.192a.322.322 0 00.395.145l1.577-.634c.4.298.828.55 1.292.75l.2 1.603a.323.323 0 00.308.24h2.534a.323.323 0 00.308-.24l.2-1.603a6.5 6.5 0 001.292-.75l1.577.634a.322.322 0 00.395-.145l1.267-2.192a.323.323 0 00-.074-.412l-1.337-1.042z" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </button>
+    <button class="avatar-btn" title="Profile">
+      <span class="avatar">U</span>
+    </button>
+  </div>
+</header>

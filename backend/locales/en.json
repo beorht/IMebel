@@ -1,0 +1,75 @@
+{
+  "nav_generate": "Generate",
+  "nav_gallery": "Gallery",
+  "nav_models": "Models",
+  "lang_switch": "RU",
+  "lang_label": "Language",
+
+  "tab_free_prompt": "Free Prompt",
+  "tab_furniture": "Furniture",
+
+  "prompt": "Prompt",
+  "prompt_hint": "Describe the image you want to generate",
+  "prompt_placeholder": "A majestic cyberpunk cityscape at sunset, neon lights reflecting on wet streets, highly detailed...",
+  "negative_prompt": "Negative Prompt",
+  "negative_prompt_placeholder": "blurry, low quality, distorted, ugly, deformed",
+  "furniture_type": "Furniture Type",
+  "furniture_design_style": "Design Style",
+  "furniture_material": "Material",
+  "furniture_color": "Color",
+  "furniture_extra_details": "Extra Details",
+  "furniture_optional": "Optional",
+  "furniture_extra_details_placeholder": "Any additional design requirements...",
+
+  "furniture_sofa": "Sofa",
+  "furniture_wardrobe": "Wardrobe",
+  "furniture_table": "Table",
+  "furniture_chair": "Chair",
+  "furniture_kitchen": "Kitchen Furniture",
+
+  "furniture_field_sofa": "Shape",
+  "furniture_field_wardrobe": "Door Type",
+  "furniture_field_table": "Table Type",
+  "furniture_field_chair": "Chair Type",
+  "furniture_field_kitchen": "Layout Type",
+
+  "furniture_placeholder_sofa": "e.g. L-shaped, round, sectional",
+  "furniture_placeholder_wardrobe": "e.g. sliding, hinged, folding",
+  "furniture_placeholder_table": "e.g. dining, coffee, desk",
+  "furniture_placeholder_chair": "e.g. armchair, stool, rocking",
+  "furniture_placeholder_kitchen": "e.g. L-shape, U-shape, straight",
+  "furniture_placeholder_style": "e.g. modern, classic, minimalist",
+  "furniture_placeholder_material": "e.g. wood, metal, fabric",
+  "furniture_placeholder_color": "e.g. white, dark brown",
+  "furniture_no_fields": "Fill at least one field",
+
+  "size": "Size",
+  "style": "Style",
+  "quality": "Quality",
+  "images": "Images",
+  "quality_fast": "Fast",
+  "quality_best": "Best",
+
+  "btn_generate": "Generate",
+  "btn_generating": "Generating...",
+  "btn_download": "Download",
+
+  "placeholder_title": "Generated images will appear here",
+  "placeholder_sub": "Enter a prompt and click Generate to start creating",
+
+  "size_512": "512 × 512",
+  "size_768": "768 × 768",
+  "size_1024": "1024 × 1024",
+
+  "style_realistic": "Realistic",
+  "style_anime": "Anime",
+  "style_cyberpunk": "Cyberpunk",
+  "style_digital_art": "Digital Art",
+
+  "error_prompt_required": "Prompt is required",
+  "error_api": "API error. Using offline generation.",
+
+  "angle_front": "Front",
+  "angle_side": "Side",
+  "angle_top": "Top"
+}
