@@ -69,7 +69,7 @@ function showLoading() {
   loadingEl.className = 'loading-ai';
   loadingEl.innerHTML = `
     <div class="loading-ai-ring">
-      <div class="loading-ai-icon">AI</div>
+      <div class="loading-ai-icon">Ai</div>
     </div>
     <div class="loading-ai-text">${__('btn_generating')}</div>
   `;
