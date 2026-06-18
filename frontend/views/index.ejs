@@ -10,11 +10,245 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+
   <%- include('partials/header') %>
-  <div class="app-layout">
-    <%- include('partials/sidebar') %>
-    <%- include('partials/output') %>
-  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            AI-генератор<br>
+            <span class="hero-title-accent">мебельных</span><br>
+            рендеров
+          </h1>
+          <p class="hero-subtitle">
+            Опишите вашу мебель — получите профессиональные рендеры
+            с трёх ракурсов за считанные секунды. Без дизайнера.
+          </p>
+          <div class="cta-buttons">
+            <a href="#form-section" class="btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              Попробовать бесплатно
+            </a>
+            <a href="#features-section" class="btn-outline">Как это работает</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-num">3</span>
+              <span class="hero-stat-label">ракурса</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">15с</span>
+              <span class="hero-stat-label">генерация</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">4</span>
+              <span class="hero-stat-label">AI-модели</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image-col">
+          <div class="hero-image-wrap">
+            <img src="/public/images/hf-1780085763806-0.png" alt="AI furniture render" />
+          </div>
+          <div class="hero-float-card">
+            <div class="hero-float-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div>
+              <div class="hero-float-label">AI-рендер готов</div>
+              <div class="hero-float-sub">front · side · top</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Проектов сгенерировано</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Ракурса на каждый рендер</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4</div>
+          <div class="stat-label">AI-провайдера</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features-section" id="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Как это работает</h2>
+        <p class="section-sub">Три простых шага — от идеи до готовых рендеров</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Выберите тип мебели</h3>
+          <p class="feature-desc">Диван, шкаф, стол, кресло или кухонная мебель — выберите категорию и заполните параметры.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Настройте стиль и материал</h3>
+          <p class="feature-desc">Укажите цвет, материал, дизайн-стиль и дополнительные детали. AI строит промпт автоматически.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Получите 3D-рендеры</h3>
+          <p class="feature-desc">AI генерирует три ракурса одновременно: спереди, сбоку и сверху. Скачайте результат в один клик.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Section -->
+  <section class="ai-section">
+    <div class="container">
+      <div class="ai-card">
+        <div class="section-header">
+          <h2 class="section-title">Мощь искусственного интеллекта</h2>
+          <p class="section-sub">Стабильная диффузия генерирует фотореалистичные рендеры по вашему описанию</p>
+        </div>
+        <div class="ai-grid">
+          <div class="ai-feature-card">
+            <div class="ai-icon-wrap ai-icon-purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3 class="ai-feature-title">Три ракурса одновременно</h3>
+            <p class="ai-feature-desc">Генерация front, side и top view происходит параллельно — вы получаете полный набор рендеров за один запрос.</p>
+          </div>
+          <div class="ai-feature-card">
+            <div class="ai-icon-wrap ai-icon-blue">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+              </svg>
+            </div>
+            <h3 class="ai-feature-title">Автоматический промпт</h3>
+            <p class="ai-feature-desc">Заполните поля формы — система сама строит детальный промпт из ваших параметров мебели. Никаких подсказок не нужно.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Generation Form -->
+  <section class="form-section" id="form-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Сгенерировать рендер</h2>
+        <p class="section-sub">Заполните параметры и нажмите кнопку — результат появится ниже</p>
+      </div>
+      <%- include('partials/sidebar') %>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <%- include('partials/output') %>
+
+  <!-- Gallery -->
+  <section class="gallery-section" id="gallery-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Примеры рендеров</h2>
+        <p class="section-sub">Реальные результаты, сгенерированные нашей системой</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="/public/images/hf-1780082759356-0.png" alt="Furniture render" loading="lazy"/></div>
+        <div class="gallery-item"><img src="/public/images/hf-1780083694116-0.png" alt="Furniture render" loading="lazy"/></div>
+        <div class="gallery-item"><img src="/public/images/hf-1780085184536-0.png" alt="Furniture render" loading="lazy"/></div>
+        <div class="gallery-item"><img src="/public/images/hf-1780085756772-0.png" alt="Furniture render" loading="lazy"/></div>
+        <div class="gallery-item"><img src="/public/images/hf-1780085757640-0.png" alt="Furniture render" loading="lazy"/></div>
+        <div class="gallery-item"><img src="/public/images/hf-1780085763806-0.png" alt="Furniture render" loading="lazy"/></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom:16px;">
+            <svg width="28" height="28" viewBox="0 0 36 36" fill="none">
+              <rect width="36" height="36" rx="9" fill="url(#footer-logo-g)"/>
+              <path d="M9 25L13 16L18 20L23 11L27 25H9Z" fill="white" opacity="0.95"/>
+              <defs>
+                <linearGradient id="footer-logo-g" x1="0" y1="0" x2="36" y2="36">
+                  <stop stop-color="#ea580c"/>
+                  <stop offset="1" stop-color="#d97706"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span style="font-size:1.1rem;font-weight:700;color:#fff;">IMebel</span>
+          </div>
+          <p class="footer-desc">AI-платформа для генерации профессиональных рендеров мебели.</p>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">Навигация</div>
+          <ul class="footer-links">
+            <li><a href="#form-section"><%= t('nav_generate') %></a></li>
+            <li><a href="#gallery-section"><%= t('nav_gallery') %></a></li>
+            <li><a href="#features-section"><%= t('nav_models') %></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">Провайдеры</div>
+          <ul class="footer-links">
+            <li><a href="#">Mock (встроенный)</a></li>
+            <li><a href="#">HuggingFace</a></li>
+            <li><a href="#">Pollinations</a></li>
+            <li><a href="#">Local SD</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">Технологии</div>
+          <ul class="footer-links">
+            <li><a href="#">Node.js + Express</a></li>
+            <li><a href="#">EJS Templates</a></li>
+            <li><a href="#">Stable Diffusion</a></li>
+            <li><a href="#">HuggingFace SDK</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 IMebel. Все права защищены.</span>
+      </div>
+    </div>
+  </footer>
+
   <script>window.__LOCALE__ = '<%= locale %>';</script>
   <script>window.__T__ = <%- JSON.stringify(translations) %>;</script>
   <script type="module" src="/js/main.js"></script>
