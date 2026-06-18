@@ -12,7 +12,7 @@
   --muted-foreground:   #64748b;
   --border:             #e5e7eb;
   --border-orange:      #fed7aa;
-  --radius:             0.5rem;
+  --surface-orange:     #fff7ed;
   --destructive:        #dc2626;
 
   --grad:               linear-gradient(to right, #ea580c, #d97706);
@@ -95,7 +95,13 @@ img { display: block; max-width: 100%; }
   cursor: pointer;
   transition: all var(--transition);
 }
-.btn-outline:hover { background: #fff7ed; }
+.btn-outline:hover { background: var(--surface-orange); }
+
+.btn-primary:focus-visible,
+.btn-outline:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
 
 /* ─── Section header ─── */
 .section-header { text-align: center; margin-bottom: 48px; }
