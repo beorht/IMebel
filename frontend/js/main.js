@@ -48,7 +48,7 @@ document.getElementById('furniture-type').addEventListener('change', (e) => {
   const container = document.getElementById('furniture-type-specific');
   container.innerHTML = `
     <label for="furniture-extra-field">${__(field.labelKey)}</label>
-    <input id="furniture-extra-field" class="form-control input" type="text" placeholder="${__(field.placeholderKey)}">
+    <input id="furniture-extra-field" class="form-control form-input" type="text" placeholder="${__(field.placeholderKey)}">
   `;
 });
 
