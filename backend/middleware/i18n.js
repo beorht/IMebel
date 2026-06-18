@@ -20,7 +20,7 @@ function loadLocale(locale) {
   }
 }
 
-export const supportedLocales = ['en', 'ru'];
+export const supportedLocales = ['en', 'ru', 'uz'];
 export const defaultLocale = 'en';
 
 export function i18nMiddleware(req, res, next) {

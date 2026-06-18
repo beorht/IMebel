@@ -52,11 +52,10 @@ document.getElementById('furniture-type').addEventListener('change', (e) => {
   `;
 });
 
-const langSwitch = document.querySelector('.lang-switch');
-if (langSwitch) {
-  langSwitch.addEventListener('click', () => {
-    const newLocale = langSwitch.dataset.locale;
-    document.cookie = `locale=${newLocale};path=/;max-age=31536000`;
+const langSelect = document.getElementById('lang-select');
+if (langSelect) {
+  langSelect.addEventListener('change', () => {
+    document.cookie = `locale=${langSelect.value};path=/;max-age=31536000`;
     window.location.reload();
   });
 }
@@ -165,7 +164,7 @@ async function generateImages() {
     outputGrid.className = 'output-grid';
     outputGrid.id = 'output-grid';
     outputArea.appendChild(outputGrid);
-    data.items.forEach((item) => item.views.forEach((v) => renderImageCard(v)));
+    data.images.forEach((img) => renderImageCard(img));
   } catch {
     if (loadingEl) { loadingEl.remove(); loadingEl = null; }
     outputGrid = document.createElement('div');
@@ -173,17 +172,14 @@ async function generateImages() {
     outputGrid.id = 'output-grid';
     outputArea.appendChild(outputGrid);
     for (let i = 0; i < count; i++) {
-      ['front', 'side', 'top'].forEach((angle) => {
-        renderImageCard({
-          id: `mock-${Date.now()}-${i}-${angle}`,
-          url: '',
-          prompt: `${furnitureType} - ${angle}`,
-          angle,
-          size,
-          style,
-          quality,
-          date: new Date().toLocaleDateString(window.__LOCALE__ === 'ru' ? 'ru-RU' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
-        });
+      renderImageCard({
+        id: `mock-${Date.now()}-${i}`,
+        url: '',
+        prompt: furnitureType,
+        size,
+        style,
+        quality,
+        date: new Date().toLocaleDateString(window.__LOCALE__ === 'ru' ? 'ru-RU' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
       });
     }
   }
@@ -224,7 +220,6 @@ function renderImageCard(view) {
             <rect width="512" height="512" fill="url(#${gradientId})" />
           </svg>`
       }
-      <div class="img-angle">${ANGLE_LABELS[view.angle] || view.angle}</div>
     </div>
     <div class="image-card-body">
       <div class="image-card-title" title="${view.prompt}">${view.prompt}</div>

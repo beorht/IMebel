@@ -21,9 +21,11 @@
       </nav>
     </div>
     <div class="navbar-right">
-      <button class="lang-switch" data-locale="<%= locale === 'ru' ? 'en' : 'ru' %>" title="<%= t('lang_label') %>">
-        <%= t('lang_switch') %>
-      </button>
+      <select class="lang-select" id="lang-select" title="<%= t('lang_label') %>">
+        <option value="en" <%= locale === 'en' ? 'selected' : '' %>>EN</option>
+        <option value="ru" <%= locale === 'ru' ? 'selected' : '' %>>RU</option>
+        <option value="uz" <%= locale === 'uz' ? 'selected' : '' %>>UZ</option>
+      </select>
       <a href="#form-section" class="btn-nav-cta"><%= t('btn_generate') %></a>
     </div>
   </div>

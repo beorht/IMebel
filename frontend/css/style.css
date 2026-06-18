@@ -186,8 +186,8 @@ img { display: block; max-width: 100%; }
 }
 .nav-link:hover { color: var(--foreground); }
 
-.lang-switch {
-  padding: 6px 14px;
+.lang-select {
+  padding: 6px 10px;
   border: 1px solid var(--border);
   border-radius: 6px;
   background: var(--muted);
@@ -196,8 +196,15 @@ img { display: block; max-width: 100%; }
   cursor: pointer; font-family: inherit;
   transition: all var(--transition);
   letter-spacing: 0.04em;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2364748b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 26px;
 }
-.lang-switch:hover { border-color: var(--primary); color: var(--primary); }
+.lang-select:hover { border-color: var(--primary); color: var(--primary); }
+.lang-select:focus { outline: none; border-color: var(--primary); }
 
 .btn-nav-cta {
   padding: 8px 20px;
@@ -485,9 +492,11 @@ img { display: block; max-width: 100%; }
 /* Image grid */
 .output-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(minmax(420px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); */
+  gap: 24px;
   width: 100%;
+  justify-items: center;
 }
 
 /* Image card entrance */
@@ -500,6 +509,8 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
+  width: 100%;
+  max-width: 560px;
   transition: all var(--transition);
   animation: card-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -649,7 +660,7 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 768px) {
   .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 0; }
-  .output-grid { grid-template-columns: repeat(2, 1fr); }
+  .output-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .btn-nav-cta { display: none; }
   .hero-float-card { display: none; }

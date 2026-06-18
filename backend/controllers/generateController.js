@@ -1,5 +1,5 @@
 import { generateImage } from '../services/providerService.js';
-import { buildFurnitureViewPrompts } from '../utils/promptBuilder.js';
+import { buildFurniturePrompt } from '../utils/promptBuilder.js';
 
 export async function createImage(req, res, next) {
   try {
@@ -12,28 +12,18 @@ export async function createImage(req, res, next) {
     }
 
     const actualCount = Math.min(Math.max(parseInt(count, 10) || 1, 1), 4);
-    const viewPrompts = buildFurnitureViewPrompts(furniture);
+    const prompt = buildFurniturePrompt(furniture);
 
-    const items = await Promise.all(
-      Array.from({ length: actualCount }, async () => {
-        const results = await Promise.all(
-          ['front', 'side', 'top'].map(async (angle) => {
-            const images = await generateImage(
-              viewPrompts[angle],
-              (negativePrompt || '').trim(),
-              size || '768x768',
-              style || 'realistic',
-              parseInt(quality, 10) || 80,
-              1
-            );
-            return { ...images[0], angle };
-          })
-        );
-        return { views: results };
-      })
+    const images = await generateImage(
+      prompt,
+      (negativePrompt || '').trim(),
+      size || '768x768',
+      style || 'realistic',
+      parseInt(quality, 10) || 80,
+      actualCount
     );
 
-    res.json({ success: true, mode: 'furniture', items });
+    res.json({ success: true, mode: 'furniture', images });
   } catch (err) {
     next(err);
   }

@@ -19,37 +19,34 @@
       <div class="hero-grid">
         <div class="hero-content">
           <h1 class="hero-title">
-            AI-генератор<br>
-            <span class="hero-title-accent">мебельных</span><br>
-            рендеров
+            <%= t('hero_title_line1') %><br>
+            <span class="hero-title-accent"><%= t('hero_title_accent') %></span><br>
+            <%= t('hero_title_line3') %>
           </h1>
-          <p class="hero-subtitle">
-            Опишите вашу мебель — получите профессиональные рендеры
-            с трёх ракурсов за считанные секунды. Без дизайнера.
-          </p>
+          <p class="hero-subtitle"><%= t('hero_subtitle') %></p>
           <div class="cta-buttons">
             <a href="#form-section" class="btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="5 3 19 12 5 21 5 3"/>
               </svg>
-              Попробовать бесплатно
+              <%= t('hero_cta_primary') %>
             </a>
-            <a href="#features-section" class="btn-outline">Как это работает</a>
+            <a href="#features-section" class="btn-outline"><%= t('hero_cta_secondary') %></a>
           </div>
           <div class="hero-stats">
             <div class="hero-stat">
-              <span class="hero-stat-num">3</span>
-              <span class="hero-stat-label">ракурса</span>
+              <span class="hero-stat-num"><%= t('hero_stat_photos_num') %></span>
+              <span class="hero-stat-label"><%= t('hero_stat_photos') %></span>
             </div>
             <div class="hero-stat-divider"></div>
             <div class="hero-stat">
-              <span class="hero-stat-num">15с</span>
-              <span class="hero-stat-label">генерация</span>
+              <span class="hero-stat-num"><%= t('hero_stat_speed_num') %></span>
+              <span class="hero-stat-label"><%= t('hero_stat_speed_label') %></span>
             </div>
             <div class="hero-stat-divider"></div>
             <div class="hero-stat">
               <span class="hero-stat-num">4</span>
-              <span class="hero-stat-label">AI-модели</span>
+              <span class="hero-stat-label"><%= t('hero_stat_ai_label') %></span>
             </div>
           </div>
         </div>
@@ -64,8 +61,8 @@
               </svg>
             </div>
             <div>
-              <div class="hero-float-label">AI-рендер готов</div>
-              <div class="hero-float-sub">front · side · top</div>
+              <div class="hero-float-label"><%= t('hero_float_label') %></div>
+              <div class="hero-float-sub"><%= t('hero_float_sub') %></div>
             </div>
           </div>
         </div>
@@ -79,15 +76,15 @@
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-num">500+</div>
-          <div class="stat-label">Проектов сгенерировано</div>
+          <div class="stat-label"><%= t('stats_projects') %></div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Ракурса на каждый рендер</div>
+          <div class="stat-num"><%= t('stats_photos_num') %></div>
+          <div class="stat-label"><%= t('stats_photos') %></div>
         </div>
         <div class="stat-card">
           <div class="stat-num">4</div>
-          <div class="stat-label">AI-провайдера</div>
+          <div class="stat-label"><%= t('stats_providers') %></div>
         </div>
       </div>
     </div>
@@ -97,8 +94,8 @@
   <section class="features-section" id="features-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Как это работает</h2>
-        <p class="section-sub">Три простых шага — от идеи до готовых рендеров</p>
+        <h2 class="section-title"><%= t('features_title') %></h2>
+        <p class="section-sub"><%= t('features_sub') %></p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
@@ -107,8 +104,8 @@
               <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
             </svg>
           </div>
-          <h3 class="feature-title">Выберите тип мебели</h3>
-          <p class="feature-desc">Диван, шкаф, стол, кресло или кухонная мебель — выберите категорию и заполните параметры.</p>
+          <h3 class="feature-title"><%= t('feature1_title') %></h3>
+          <p class="feature-desc"><%= t('feature1_desc') %></p>
         </div>
         <div class="feature-card">
           <div class="feature-icon-wrap">
@@ -116,8 +113,8 @@
               <circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
             </svg>
           </div>
-          <h3 class="feature-title">Настройте стиль и материал</h3>
-          <p class="feature-desc">Укажите цвет, материал, дизайн-стиль и дополнительные детали. AI строит промпт автоматически.</p>
+          <h3 class="feature-title"><%= t('feature2_title') %></h3>
+          <p class="feature-desc"><%= t('feature2_desc') %></p>
         </div>
         <div class="feature-card">
           <div class="feature-icon-wrap">
@@ -125,8 +122,8 @@
               <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
             </svg>
           </div>
-          <h3 class="feature-title">Получите 3D-рендеры</h3>
-          <p class="feature-desc">AI генерирует три ракурса одновременно: спереди, сбоку и сверху. Скачайте результат в один клик.</p>
+          <h3 class="feature-title"><%= t('feature3_title') %></h3>
+          <p class="feature-desc"><%= t('feature3_desc') %></p>
         </div>
       </div>
     </div>
@@ -137,8 +134,8 @@
     <div class="container">
       <div class="ai-card">
         <div class="section-header">
-          <h2 class="section-title">Мощь искусственного интеллекта</h2>
-          <p class="section-sub">Стабильная диффузия генерирует фотореалистичные рендеры по вашему описанию</p>
+          <h2 class="section-title"><%= t('ai_title') %></h2>
+          <p class="section-sub"><%= t('ai_sub') %></p>
         </div>
         <div class="ai-grid">
           <div class="ai-feature-card">
@@ -147,8 +144,8 @@
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
               </svg>
             </div>
-            <h3 class="ai-feature-title">Три ракурса одновременно</h3>
-            <p class="ai-feature-desc">Генерация front, side и top view происходит параллельно — вы получаете полный набор рендеров за один запрос.</p>
+            <h3 class="ai-feature-title"><%= t('ai_card1_title') %></h3>
+            <p class="ai-feature-desc"><%= t('ai_card1_desc') %></p>
           </div>
           <div class="ai-feature-card">
             <div class="ai-icon-wrap ai-icon-blue">
@@ -156,8 +153,8 @@
                 <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
               </svg>
             </div>
-            <h3 class="ai-feature-title">Автоматический промпт</h3>
-            <p class="ai-feature-desc">Заполните поля формы — система сама строит детальный промпт из ваших параметров мебели. Никаких подсказок не нужно.</p>
+            <h3 class="ai-feature-title"><%= t('ai_card2_title') %></h3>
+            <p class="ai-feature-desc"><%= t('ai_card2_desc') %></p>
           </div>
         </div>
       </div>
@@ -168,8 +165,8 @@
   <section class="form-section" id="form-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Сгенерировать рендер</h2>
-        <p class="section-sub">Заполните параметры и нажмите кнопку — результат появится ниже</p>
+        <h2 class="section-title"><%= t('form_title') %></h2>
+        <p class="section-sub"><%= t('form_sub') %></p>
       </div>
       <%- include('partials/sidebar') %>
     </div>
@@ -182,8 +179,8 @@
   <section class="gallery-section" id="gallery-section">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Примеры рендеров</h2>
-        <p class="section-sub">Реальные результаты, сгенерированные нашей системой</p>
+        <h2 class="section-title"><%= t('gallery_title') %></h2>
+        <p class="section-sub"><%= t('gallery_sub') %></p>
       </div>
       <div class="gallery-grid">
         <div class="gallery-item"><img src="/public/images/hf-1780082759356-0.png" alt="Furniture render" loading="lazy"/></div>
@@ -214,10 +211,10 @@
             </svg>
             <span style="font-size:1.1rem;font-weight:700;color:#fff;">IMebel</span>
           </div>
-          <p class="footer-desc">AI-платформа для генерации профессиональных рендеров мебели.</p>
+          <p class="footer-desc"><%= t('footer_desc') %></p>
         </div>
         <div class="footer-col">
-          <div class="footer-heading">Навигация</div>
+          <div class="footer-heading"><%= t('footer_nav') %></div>
           <ul class="footer-links">
             <li><a href="#form-section"><%= t('nav_generate') %></a></li>
             <li><a href="#gallery-section"><%= t('nav_gallery') %></a></li>
@@ -225,16 +222,16 @@
           </ul>
         </div>
         <div class="footer-col">
-          <div class="footer-heading">Провайдеры</div>
+          <div class="footer-heading"><%= t('footer_providers') %></div>
           <ul class="footer-links">
-            <li><a href="#">Mock (встроенный)</a></li>
+            <li><a href="#">Mock</a></li>
             <li><a href="#">HuggingFace</a></li>
             <li><a href="#">Pollinations</a></li>
             <li><a href="#">Local SD</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <div class="footer-heading">Технологии</div>
+          <div class="footer-heading"><%= t('footer_tech') %></div>
           <ul class="footer-links">
             <li><a href="#">Node.js + Express</a></li>
             <li><a href="#">EJS Templates</a></li>
@@ -244,7 +241,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2025 IMebel. Все права защищены.</span>
+        <span><%= t('footer_copyright') %></span>
       </div>
     </div>
   </footer>
