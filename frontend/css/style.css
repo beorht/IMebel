@@ -211,3 +211,97 @@ img { display: block; max-width: 100%; }
   display: inline-flex; align-items: center;
 }
 .btn-nav-cta:hover { background: var(--grad-hover); }
+
+/* ─── Hero ─── */
+.hero {
+  background: var(--grad-hero);
+  padding: 80px 0;
+}
+.hero-grid {
+  display: grid;
+  gap: 48px;
+  align-items: center;
+}
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--foreground);
+  margin-bottom: 20px;
+}
+.hero-title-accent { color: var(--primary); }
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+.cta-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.hero-stat-label {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+.hero-stat-divider {
+  width: 1px; height: 32px;
+  background: var(--border);
+}
+
+.hero-image-col { position: relative; }
+.hero-image-wrap {
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-2xl);
+}
+.hero-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+.hero-float-card {
+  position: absolute;
+  bottom: -20px; left: -20px;
+  background: #fff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid #ffedd5;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-float-icon {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, #fff7ed, #ffedd5);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.hero-float-label { font-size: 0.875rem; font-weight: 600; color: var(--foreground); }
+.hero-float-sub { font-size: 0.75rem; color: var(--muted-foreground); }
+
+/* ─── Stats ─── */
+.stats-section { background: #fff; padding: 64px 0; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.stat-card { padding: 24px; }
+.stat-num {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label { font-size: 1rem; color: var(--muted-foreground); }
