@@ -1,0 +1,9 @@
+[build]
+  functions = "functions"
+  publish = "frontend"
+
+# Route all requests to the Express app running as a Netlify Function
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200

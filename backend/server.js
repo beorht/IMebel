@@ -36,8 +36,13 @@ app.use('/api/templates', templatesRouter);
 
 app.use(errorHandler);
 
+/*
 app.listen(PORT, () => {
   const provider = process.env.AI_PROVIDER || 'mock';
   console.log(`🚀 IMebel running at http://localhost:${PORT}`);
   console.log(`🤖 AI Provider: ${provider}`);
 });
+*/
+
+
+export default app;

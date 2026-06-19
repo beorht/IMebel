@@ -6,7 +6,8 @@
   "main": "backend/server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "dev": "node --watch backend/server.js"
+    "dev": "node --watch backend/server.js",
+    "build": "echo \"Preparing Netlify deployment\""
   },
   "dependencies": {
     "@huggingface/inference": "^4.13.18",
@@ -15,6 +16,7 @@
     "dotenv": "^17.4.2",
     "ejs": "^3.1.10",
     "express": "^4.21.0",
+    "serverless-http": "^4.0.0",
     "uuid": "^14.0.0"
   }
 }
