@@ -1,5 +1,4 @@
 import { generateImage } from '../services/providerService.js';
-import { buildFurniturePrompt } from '../utils/promptBuilder.js';
 
 export async function createImage(req, res, next) {
   try {
@@ -10,6 +9,9 @@ export async function createImage(req, res, next) {
       err.status = 400;
       return next(err);
     }
+
+    // Dynamic import to avoid module-level file reads in some serverless bundlers
+    const { buildFurniturePrompt } = await import('../utils/promptBuilder.js');
 
     const actualCount = Math.min(Math.max(parseInt(count, 10) || 1, 1), 4);
     const prompt = buildFurniturePrompt(furniture);
