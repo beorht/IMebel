@@ -4,8 +4,14 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { v4 as uuidv4 } from 'uuid';
 
-const __filename_localService = fileURLToPath(import.meta.url);
-const __dirname_localService = path.dirname(__filename_localService);
+let __filename_localService;
+let __dirname_localService;
+try {
+  __filename_localService = typeof __filename !== 'undefined' ? __filename : fileURLToPath(import.meta.url);
+  __dirname_localService = path.dirname(__filename_localService);
+} catch (err) {
+  __dirname_localService = process.cwd();
+}
 const outputDir = path.resolve(__dirname_localService, '../public/images');
 
 const SD_API_URL = process.env.SD_API_URL || 'http://127.0.0.1:7860';

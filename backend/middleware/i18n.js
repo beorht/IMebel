@@ -2,8 +2,14 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __filename_i18n = fileURLToPath(import.meta.url);
-const __dirname_i18n = path.dirname(__filename_i18n);
+let __filename_i18n;
+let __dirname_i18n;
+try {
+  __filename_i18n = typeof __filename !== 'undefined' ? __filename : fileURLToPath(import.meta.url);
+  __dirname_i18n = path.dirname(__filename_i18n);
+} catch (err) {
+  __dirname_i18n = process.cwd();
+}
 
 const localesDir = path.resolve(__dirname_i18n, '../locales');
 const cache = {};

@@ -2,8 +2,14 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 
-const __filename_download = fileURLToPath(import.meta.url);
-const __dirname_download = path.dirname(__filename_download);
+let __filename_download;
+let __dirname_download;
+try {
+  __filename_download = typeof __filename !== 'undefined' ? __filename : fileURLToPath(import.meta.url);
+  __dirname_download = path.dirname(__filename_download);
+} catch (err) {
+  __dirname_download = process.cwd();
+}
 
 const imagesDir = path.resolve(__dirname_download, '../public/images');
 

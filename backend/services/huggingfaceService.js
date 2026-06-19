@@ -3,8 +3,14 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __filename_hf = fileURLToPath(import.meta.url);
-const __dirname_hf = path.dirname(__filename_hf);
+let __filename_hf;
+let __dirname_hf;
+try {
+  __filename_hf = typeof __filename !== 'undefined' ? __filename : fileURLToPath(import.meta.url);
+  __dirname_hf = path.dirname(__filename_hf);
+} catch (err) {
+  __dirname_hf = process.cwd();
+}
 const outputDir = path.resolve(__dirname_hf, '../public/images');
 
 // Parse comma-separated tokens into a pool
