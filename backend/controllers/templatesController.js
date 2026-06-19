@@ -11,6 +11,8 @@ try {
   __dirname_templates = process.cwd();
 }
 
+import { getDefaultTemplates } from '../utils/promptBuilder.js';
+
 export function getTemplates(req, res) {
   const candidates = [
     path.resolve(__dirname_templates, '../public/json_data/furniture_prompt_templates.json'),
@@ -20,13 +22,13 @@ export function getTemplates(req, res) {
   ];
 
   const found = candidates.find((p) => fs.existsSync(p));
-  if (!found) return res.json({ templates: {} });
+  if (!found) return res.json(getDefaultTemplates());
 
   try {
     const data = JSON.parse(fs.readFileSync(found, 'utf-8'));
     return res.json(data);
   } catch (err) {
-    return res.status(500).json({ error: 'Failed to read templates' });
+    return res.json(getDefaultTemplates());
   }
 }
 

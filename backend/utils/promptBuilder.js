@@ -20,6 +20,20 @@ const candidatePaths = [
 
 let templatesData = null;
 
+const defaultTemplates = {
+  templates: {
+    chair: {
+      prompt_template: 'Photorealistic modern {material} chair in {color}, clean minimal studio lighting, white background, high detail.',
+    },
+    table: {
+      prompt_template: 'Photorealistic {material} table with {finish} finish, {color} tones, studio lighting, isolated on white background, high detail.',
+    },
+    sofa: {
+      prompt_template: 'Photorealistic {material} sofa in {color}, Scandinavian style, studio lighting, white background, high detail.',
+    },
+  },
+};
+
 function resolveTemplatesPath() {
   for (const p of candidatePaths) {
     if (fs.existsSync(p)) return p;
@@ -31,17 +45,22 @@ function loadTemplates() {
   if (templatesData) return templatesData;
   const p = resolveTemplatesPath();
   if (!p) {
-    // Fallback to an empty structure to avoid throwing during module import in serverless envs
-    templatesData = { templates: {} };
+    // Use built-in default templates when external file is missing
+    templatesData = defaultTemplates;
     return templatesData;
   }
 
   try {
     templatesData = JSON.parse(fs.readFileSync(p, 'utf-8'));
   } catch (err) {
-    templatesData = { templates: {} };
+    // Fallback to built-in defaults on parse/read error
+    templatesData = defaultTemplates;
   }
   return templatesData;
+}
+
+export function getDefaultTemplates() {
+  return defaultTemplates;
 }
 
 export function buildFurniturePrompt(furniture) {
