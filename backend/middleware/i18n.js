@@ -2,10 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename_i18n = fileURLToPath(import.meta.url);
+const __dirname_i18n = path.dirname(__filename_i18n);
 
-const localesDir = path.resolve(__dirname, '../locales');
+const localesDir = path.resolve(__dirname_i18n, '../locales');
 const cache = {};
 
 function loadLocale(locale) {

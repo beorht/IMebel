@@ -2,10 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename_promptBuilder = fileURLToPath(import.meta.url);
+const __dirname_promptBuilder = path.dirname(__filename_promptBuilder);
 
-const templatesPath = path.resolve(__dirname, '../public/json_data/furniture_prompt_templates.json');
+const templatesPath = path.resolve(__dirname_promptBuilder, '../public/json_data/furniture_prompt_templates.json');
 const templatesData = JSON.parse(fs.readFileSync(templatesPath, 'utf-8'));
 
 export function buildFurniturePrompt(furniture) {

@@ -2,10 +2,10 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename_download = fileURLToPath(import.meta.url);
+const __dirname_download = path.dirname(__filename_download);
 
-const imagesDir = path.resolve(__dirname, '../public/images');
+const imagesDir = path.resolve(__dirname_download, '../public/images');
 
 export function downloadImage(req, res, next) {
   const { filename } = req.params;

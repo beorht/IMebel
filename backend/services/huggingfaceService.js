@@ -3,9 +3,9 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const outputDir = path.resolve(__dirname, '../public/images');
+const __filename_hf = fileURLToPath(import.meta.url);
+const __dirname_hf = path.dirname(__filename_hf);
+const outputDir = path.resolve(__dirname_hf, '../public/images');
 
 // Parse comma-separated tokens into a pool
 function buildTokenPool() {
