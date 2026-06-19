@@ -9,8 +9,14 @@ import templatesRouter from './routes/templates.js';
 import errorHandler from './middleware/errorHandler.js';
 import { i18nMiddleware } from './middleware/i18n.js';
 
-const __filename_server = fileURLToPath(import.meta.url);
-const __dirname_server = path.dirname(__filename_server);
+let __filename_server;
+let __dirname_server;
+try {
+  __filename_server = typeof __filename !== 'undefined' ? __filename : fileURLToPath(import.meta.url);
+  __dirname_server = path.dirname(__filename_server);
+} catch (err) {
+  __dirname_server = process.cwd();
+}
 
 const app = express();
 const PORT = process.env.PORT || 3000;
