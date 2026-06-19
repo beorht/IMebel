@@ -11,12 +11,43 @@ try {
   __dirname_promptBuilder = process.cwd();
 }
 
-const templatesPath = path.resolve(__dirname_promptBuilder, '../public/json_data/furniture_prompt_templates.json');
-const templatesData = JSON.parse(fs.readFileSync(templatesPath, 'utf-8'));
+const candidatePaths = [
+  path.resolve(__dirname_promptBuilder, '../public/json_data/furniture_prompt_templates.json'),
+  path.resolve(__dirname_promptBuilder, '../frontend/public/json_data/furniture_prompt_templates.json'),
+  path.resolve(process.cwd(), 'frontend/public/json_data/furniture_prompt_templates.json'),
+  path.resolve(process.cwd(), 'public/json_data/furniture_prompt_templates.json'),
+];
+
+let templatesData = null;
+
+function resolveTemplatesPath() {
+  for (const p of candidatePaths) {
+    if (fs.existsSync(p)) return p;
+  }
+  return null;
+}
+
+function loadTemplates() {
+  if (templatesData) return templatesData;
+  const p = resolveTemplatesPath();
+  if (!p) {
+    // Fallback to an empty structure to avoid throwing during module import in serverless envs
+    templatesData = { templates: {} };
+    return templatesData;
+  }
+
+  try {
+    templatesData = JSON.parse(fs.readFileSync(p, 'utf-8'));
+  } catch (err) {
+    templatesData = { templates: {} };
+  }
+  return templatesData;
+}
 
 export function buildFurniturePrompt(furniture) {
   const { type, fields } = furniture;
-  const template = templatesData.templates[type];
+  const data = loadTemplates();
+  const template = data.templates[type];
   if (!template) throw new Error(`Unknown furniture type: ${type}`);
 
   let prompt = template.prompt_template;
