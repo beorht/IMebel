@@ -34,7 +34,7 @@ db.exec(`
 `);
 
 const insertUserStmt = db.prepare(
-  'INSERT INTO users (username, password_hash) VALUES (?, ?)'
+  'INSERT INTO users (username, password_hash) VALUES (?, ?) RETURNING id, username, created_at'
 );
 const findUserByUsernameStmt = db.prepare(
   'SELECT id, username, password_hash AS passwordHash FROM users WHERE username = ?'
@@ -47,8 +47,8 @@ const insertGenerationStmt = db.prepare(
 );
 
 export function createUser(username, passwordHash) {
-  const info = insertUserStmt.run(username, passwordHash);
-  return { id: info.lastInsertRowid, username };
+  const result = insertUserStmt.get(username, passwordHash);
+  return { id: result.id, username: result.username, createdAt: result.created_at };
 }
 
 export function findUserByUsername(username) {
