@@ -9,6 +9,7 @@ import templatesRouter from './routes/templates.js';
 import authRouter from './routes/auth.js';
 import errorHandler from './middleware/errorHandler.js';
 import { i18nMiddleware } from './middleware/i18n.js';
+import { requireAuth, attachUser } from './middleware/requireAuth.js';
 
 let __filename_server;
 let __dirname_server;
@@ -28,6 +29,7 @@ app.set('views', path.resolve(__dirname_server, '../frontend/views'));
 app.use(express.json());
 app.use(cookieParser(process.env.COOKIE_SECRET || 'dev-secret'));
 app.use(i18nMiddleware);
+app.use(attachUser);
 app.use(express.static(path.resolve(__dirname_server, '../frontend')));
 app.use('/public', express.static(path.resolve(__dirname_server, 'public')));
 
@@ -38,7 +40,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/download', downloadRouter);
-app.use('/api/generate', generateRouter);
+app.use('/api/generate', requireAuth, generateRouter);
 app.use('/api/templates', templatesRouter);
 app.use('/api/auth', authRouter);
 
