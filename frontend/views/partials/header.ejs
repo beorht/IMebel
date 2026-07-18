@@ -26,6 +26,12 @@
         <option value="ru" <%= locale === 'ru' ? 'selected' : '' %>>RU</option>
         <option value="uz" <%= locale === 'uz' ? 'selected' : '' %>>UZ</option>
       </select>
+      <% if (user) { %>
+        <span class="nav-link"><%= user.username %></span>
+        <button id="logout-btn" class="btn-outline" type="button">Logout</button>
+      <% } else { %>
+        <a href="/login" class="btn-outline">Login</a>
+      <% } %>
       <a href="#form-section" class="btn-nav-cta"><%= t('btn_generate') %></a>
     </div>
   </div>

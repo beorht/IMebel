@@ -60,6 +60,14 @@ if (langSelect) {
   });
 }
 
+const logoutBtn = document.getElementById('logout-btn');
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', async () => {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    window.location.href = '/login';
+  });
+}
+
 function showLoading() {
   resultsSection.style.display = 'block';
   resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -154,6 +162,14 @@ async function generateImages() {
       headers: { 'Content-Type': 'application/json' },
       body,
     });
+
+    if (res.status === 401) {
+      if (loadingEl) { loadingEl.remove(); loadingEl = null; }
+      outputArea.insertAdjacentHTML('beforeend', '<p style="color:#d33;">Please <a href="/login">sign in</a> to generate images.</p>');
+      generateBtn.disabled = false;
+      generateBtn.innerHTML = `${__('btn_generate')}`;
+      return;
+    }
 
     if (!res.ok) throw new Error('API error');
 

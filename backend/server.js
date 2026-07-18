@@ -39,6 +39,12 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/login', (req, res) => {
+  res.render('login', {
+    title: 'IMebel — Login',
+  });
+});
+
 app.use('/download', downloadRouter);
 app.use('/api/generate', requireAuth, generateRouter);
 app.use('/api/templates', templatesRouter);
