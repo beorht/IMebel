@@ -120,5 +120,22 @@
   "footer_nav": "Навигация",
   "footer_providers": "Провайдеры",
   "footer_tech": "Технологии",
-  "footer_copyright": "© 2025 IMebel. Все права защищены."
+  "footer_copyright": "© 2025 IMebel. Все права защищены.",
+
+  "auth_login_title": "Вход",
+  "auth_register_title": "Регистрация",
+  "auth_subtitle": "Войдите, чтобы генерировать рендеры мебели",
+  "auth_username": "Имя пользователя",
+  "auth_password": "Пароль",
+  "auth_login_btn": "Войти",
+  "auth_register_btn": "Создать аккаунт",
+  "auth_login_subtitle": "Войдите в аккаунт, чтобы продолжить",
+  "auth_register_subtitle": "Создайте аккаунт, чтобы начать генерацию",
+  "auth_no_account": "Нет аккаунта?",
+  "auth_have_account": "Уже есть аккаунт?",
+  "auth_go_register": "Зарегистрироваться",
+  "auth_go_login": "Войти",
+  "auth_gate_title": "Войдите, чтобы генерировать",
+  "auth_gate_sub": "Создайте аккаунт или войдите, чтобы заполнить параметры и сгенерировать рендеры мебели.",
+  "auth_gate_login": "Войти / Зарегистрироваться"
 }

@@ -120,5 +120,22 @@
   "footer_nav": "Navigation",
   "footer_providers": "Providers",
   "footer_tech": "Technologies",
-  "footer_copyright": "© 2025 IMebel. All rights reserved."
+  "footer_copyright": "© 2025 IMebel. All rights reserved.",
+
+  "auth_login_title": "Log in",
+  "auth_register_title": "Sign up",
+  "auth_subtitle": "Sign in to generate furniture renders",
+  "auth_username": "Username",
+  "auth_password": "Password",
+  "auth_login_btn": "Log in",
+  "auth_register_btn": "Create account",
+  "auth_login_subtitle": "Sign in to your account to continue",
+  "auth_register_subtitle": "Create an account to start generating",
+  "auth_no_account": "Don't have an account?",
+  "auth_have_account": "Already have an account?",
+  "auth_go_register": "Sign up",
+  "auth_go_login": "Log in",
+  "auth_gate_title": "Sign in to generate",
+  "auth_gate_sub": "Create an account or log in to fill in the parameters and generate furniture renders.",
+  "auth_gate_login": "Log in / Sign up"
 }

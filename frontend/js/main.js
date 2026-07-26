@@ -34,23 +34,30 @@ const ANGLE_LABELS = {
 let outputGrid = null;
 let loadingEl = null;
 
-qualitySlider.addEventListener('input', () => {
-  qualityValue.textContent = qualitySlider.value;
-});
+if (qualitySlider) {
+  qualitySlider.addEventListener('input', () => {
+    qualityValue.textContent = qualitySlider.value;
+  });
+}
 
-countSlider.addEventListener('input', () => {
-  countValue.textContent = countSlider.value;
-});
+if (countSlider) {
+  countSlider.addEventListener('input', () => {
+    countValue.textContent = countSlider.value;
+  });
+}
 
-document.getElementById('furniture-type').addEventListener('change', (e) => {
-  const type = e.target.value;
-  const field = FURNITURE_FIELDS[type];
-  const container = document.getElementById('furniture-type-specific');
-  container.innerHTML = `
-    <label for="furniture-extra-field">${__(field.labelKey)}</label>
-    <input id="furniture-extra-field" class="form-control form-input" type="text" placeholder="${__(field.placeholderKey)}">
-  `;
-});
+const furnitureTypeSelect = document.getElementById('furniture-type');
+if (furnitureTypeSelect) {
+  furnitureTypeSelect.addEventListener('change', (e) => {
+    const type = e.target.value;
+    const field = FURNITURE_FIELDS[type];
+    const container = document.getElementById('furniture-type-specific');
+    container.innerHTML = `
+      <label for="furniture-extra-field">${__(field.labelKey)}</label>
+      <input id="furniture-extra-field" class="form-control form-input" type="text" placeholder="${__(field.placeholderKey)}">
+    `;
+  });
+}
 
 const langSelect = document.getElementById('lang-select');
 if (langSelect) {
@@ -260,20 +267,24 @@ function renderImageCard(view) {
   outputGrid.appendChild(card);
 }
 
-outputArea.addEventListener('click', (e) => {
-  const btn = e.target.closest('.btn-download');
-  if (!btn) return;
+if (outputArea) {
+  outputArea.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-download');
+    if (!btn) return;
 
-  const filename = btn.dataset.filename;
-  const imgUrl = btn.dataset.imgurl;
-  const isExternal = imgUrl && imgUrl.startsWith('http');
+    const filename = btn.dataset.filename;
+    const imgUrl = btn.dataset.imgurl;
+    const isExternal = imgUrl && imgUrl.startsWith('http');
 
-  const link = document.createElement('a');
-  link.href = isExternal ? imgUrl : `/download/${filename}`;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-});
+    const link = document.createElement('a');
+    link.href = isExternal ? imgUrl : `/download/${filename}`;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+}
 
-generateBtn.addEventListener('click', generateImages);
+if (generateBtn) {
+  generateBtn.addEventListener('click', generateImages);
+}

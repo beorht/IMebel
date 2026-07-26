@@ -168,12 +168,18 @@
         <h2 class="section-title"><%= t('form_title') %></h2>
         <p class="section-sub"><%= t('form_sub') %></p>
       </div>
-      <%- include('partials/sidebar') %>
+      <% if (user) { %>
+        <%- include('partials/sidebar') %>
+      <% } else { %>
+        <%- include('partials/auth-gate') %>
+      <% } %>
     </div>
   </section>
 
   <!-- Results -->
-  <%- include('partials/output') %>
+  <% if (user) { %>
+    <%- include('partials/output') %>
+  <% } %>
 
   <!-- Gallery -->
   <section class="gallery-section" id="gallery-section">
