@@ -120,5 +120,22 @@
   "footer_nav": "Navigatsiya",
   "footer_providers": "Provayder",
   "footer_tech": "Texnologiyalar",
-  "footer_copyright": "© 2025 IMebel. Barcha huquqlar himoyalangan."
+  "footer_copyright": "© 2025 IMebel. Barcha huquqlar himoyalangan.",
+
+  "auth_login_title": "Kirish",
+  "auth_register_title": "Ro'yxatdan o'tish",
+  "auth_subtitle": "Mebel render yaratish uchun tizimga kiring",
+  "auth_username": "Foydalanuvchi nomi",
+  "auth_password": "Parol",
+  "auth_login_btn": "Kirish",
+  "auth_register_btn": "Hisob yaratish",
+  "auth_login_subtitle": "Davom etish uchun hisobingizga kiring",
+  "auth_register_subtitle": "Generatsiyani boshlash uchun hisob yarating",
+  "auth_no_account": "Hisobingiz yo'qmi?",
+  "auth_have_account": "Hisobingiz bormi?",
+  "auth_go_register": "Ro'yxatdan o'tish",
+  "auth_go_login": "Kirish",
+  "auth_gate_title": "Generatsiya qilish uchun tizimga kiring",
+  "auth_gate_sub": "Parametrlarni to'ldirib mebel renderlarini yaratish uchun hisob yarating yoki tizimga kiring.",
+  "auth_gate_login": "Kirish / Ro'yxatdan o'tish"
 }

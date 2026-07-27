@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <%- include('partials/header') %>
+
+  <section class="auth-section">
+    <div class="container">
+
+      <!-- ── Login block ── -->
+      <div class="auth-card" id="login-block" data-block="login">
+        <div class="auth-header">
+          <div class="auth-title"><%= t('auth_login_title') %></div>
+          <p class="auth-sub"><%= t('auth_login_subtitle') %></p>
+        </div>
+
+        <form id="login-form" class="auth-form">
+          <div class="form-group">
+            <label for="login-username"><%= t('auth_username') %></label>
+            <input class="form-control form-input" type="text" id="login-username" placeholder="<%= t('auth_username') %>" required autocomplete="username" />
+          </div>
+          <div class="form-group">
+            <label for="login-password"><%= t('auth_password') %></label>
+            <input class="form-control form-input" type="password" id="login-password" placeholder="<%= t('auth_password') %>" required autocomplete="current-password" />
+          </div>
+          <p id="login-error" class="form-error"></p>
+          <button type="submit" class="btn-generate"><%= t('auth_login_btn') %></button>
+        </form>
+
+        <p class="auth-switch">
+          <%= t('auth_no_account') %>
+          <button type="button" class="auth-switch-link" data-go="register"><%= t('auth_go_register') %></button>
+        </p>
+      </div>
+
+      <!-- ── Register block ── -->
+      <div class="auth-card" id="register-block" data-block="register" hidden>
+        <div class="auth-header">
+          <div class="auth-title"><%= t('auth_register_title') %></div>
+          <p class="auth-sub"><%= t('auth_register_subtitle') %></p>
+        </div>
+
+        <form id="register-form" class="auth-form">
+          <div class="form-group">
+            <label for="register-username"><%= t('auth_username') %></label>
+            <input class="form-control form-input" type="text" id="register-username" placeholder="<%= t('auth_username') %>" required autocomplete="username" />
+          </div>
+          <div class="form-group">
+            <label for="register-password"><%= t('auth_password') %></label>
+            <input class="form-control form-input" type="password" id="register-password" placeholder="<%= t('auth_password') %>" required autocomplete="new-password" />
+          </div>
+          <p id="register-error" class="form-error"></p>
+          <button type="submit" class="btn-generate"><%= t('auth_register_btn') %></button>
+        </form>
+
+        <p class="auth-switch">
+          <%= t('auth_have_account') %>
+          <button type="button" class="auth-switch-link" data-go="login"><%= t('auth_go_login') %></button>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const authBlocks = {
+      login: document.getElementById('login-block'),
+      register: document.getElementById('register-block'),
+    };
+
+    function showBlock(name) {
+      Object.entries(authBlocks).forEach(([key, el]) => {
+        el.hidden = key !== name;
+      });
+    }
+
+    document.querySelectorAll('.auth-switch-link').forEach((link) => {
+      link.addEventListener('click', () => showBlock(link.dataset.go));
+    });
+
+    async function submitAuth(url, username, password, errorEl) {
+      errorEl.textContent = '';
+      errorEl.classList.remove('visible');
+
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password }),
+        });
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          errorEl.textContent = data.error || 'Something went wrong';
+          errorEl.classList.add('visible');
+          return;
+        }
+
+        window.location.href = '/';
+      } catch {
+        errorEl.textContent = 'Network error, please try again';
+        errorEl.classList.add('visible');
+      }
+    }
+
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitAuth(
+        '/api/auth/login',
+        document.getElementById('login-username').value.trim(),
+        document.getElementById('login-password').value,
+        document.getElementById('login-error')
+      );
+    });
+
+    document.getElementById('register-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitAuth(
+        '/api/auth/register',
+        document.getElementById('register-username').value.trim(),
+        document.getElementById('register-password').value,
+        document.getElementById('register-error')
+      );
+    });
+  </script>
+</body>
+</html>

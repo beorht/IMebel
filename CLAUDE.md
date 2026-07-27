@@ -56,6 +56,16 @@ POST /api/generate
 
 **Frontend:** Static files served from `frontend/`. EJS views in `frontend/views/`. The frontend calls `GET /api/templates` to load furniture type options, then `POST /api/generate` with a `furniture: { type, fields }` payload.
 
+## Auth (testing feature)
+
+Added for user testing — self-registration with username/password, gating only `POST /api/generate`:
+
+- `backend/db.js` opens/creates `backend/data/imebel.sqlite` (gitignored, not persistent on Netlify's ephemeral filesystem — local/VM use only for now) and exposes `createUser`/`findUserByUsername`/`findUserById`/`insertGeneration`.
+- `backend/routes/auth.js` + `backend/controllers/authController.js`: `POST /api/auth/{register,login,logout}`, hashing passwords with `bcrypt` and setting a signed `uid` cookie (`cookieParser(process.env.COOKIE_SECRET)`).
+- `backend/middleware/requireAuth.js` exports `requireAuth` (blocks `/api/generate` with `401` if no valid session) and `attachUser` (non-blocking, sets `res.locals.user` for every view so the header can show login/logout state).
+- `generateController.createImage` records every successful generation into the `generations` table against `req.user.id`.
+- `GET /`, `GET /api/templates`, and `GET /login` remain public.
+
 ## Adding a Provider
 
 1. Create `backend/services/yourService.js` — export `async function yourGenerate(prompt, negativePrompt, size, style, quality, count)` returning an array of image objects (`{ id, url, prompt, size, style, quality, date }`).

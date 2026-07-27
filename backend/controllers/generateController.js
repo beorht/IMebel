@@ -1,4 +1,5 @@
 import { generateImage } from '../services/providerService.js';
+import { insertGeneration } from '../db.js';
 
 export async function createImage(req, res, next) {
   try {
@@ -24,6 +25,8 @@ export async function createImage(req, res, next) {
       parseInt(quality, 10) || 80,
       actualCount
     );
+
+    insertGeneration(req.user.id, prompt, JSON.stringify(images));
 
     res.json({ success: true, mode: 'furniture', images });
   } catch (err) {
