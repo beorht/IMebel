@@ -2,12 +2,12 @@ export async function pollGenerate(prompt, negativePrompt, size, style, quality,
   const encoded = encodeURIComponent(prompt);
   const baseUrl = `https://image.pollinations.ai/prompt/${encoded}`;
 
-  const width = size.split('x')[0];
+  const [width, height] = size.split('x');
 
   const results = [];
   for (let i = 0; i < count; i++) {
     const seed = Date.now() + i;
-    const url = `${baseUrl}?width=${width}&height=${width}&seed=${seed}&nologo=true`;
+    const url = `${baseUrl}?width=${width}&height=${height}&seed=${seed}&nologo=true`;
 
     results.push({
       id: `poll-${seed}`,
