@@ -590,6 +590,14 @@ img { display: block; max-width: 100%; }
   justify-items: center;
 }
 
+/* Saved generations grid (account history page) */
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
 /* Image card entrance */
 @keyframes card-in {
   from { opacity: 0; transform: translateY(16px) scale(0.97); }
