@@ -7,6 +7,7 @@ import downloadRouter from './routes/download.js';
 import generateRouter from './routes/generate.js';
 import templatesRouter from './routes/templates.js';
 import authRouter from './routes/auth.js';
+import historyRouter from './routes/history.js';
 import errorHandler from './middleware/errorHandler.js';
 import { i18nMiddleware } from './middleware/i18n.js';
 import { requireAuth, attachUser } from './middleware/requireAuth.js';
@@ -45,8 +46,18 @@ app.get('/login', (req, res) => {
   });
 });
 
+app.get('/history', (req, res) => {
+  if (!res.locals.user) {
+    return res.redirect('/login');
+  }
+  res.render('history', {
+    title: 'IMebel — My Generations',
+  });
+});
+
 app.use('/download', downloadRouter);
 app.use('/api/generate', requireAuth, generateRouter);
+app.use('/api/history', requireAuth, historyRouter);
 app.use('/api/templates', templatesRouter);
 app.use('/api/auth', authRouter);
 

@@ -15,9 +15,9 @@
         <span class="logo-text">IMebel</span>
       </a>
       <nav class="nav-links">
-        <a href="#form-section" class="nav-link"><%= t('nav_generate') %></a>
-        <a href="#gallery-section" class="nav-link"><%= t('nav_gallery') %></a>
-        <a href="#features-section" class="nav-link"><%= t('nav_models') %></a>
+        <a href="/#form-section" class="nav-link"><%= t('nav_generate') %></a>
+        <a href="/#gallery-section" class="nav-link"><%= t('nav_gallery') %></a>
+        <a href="/#features-section" class="nav-link"><%= t('nav_models') %></a>
       </nav>
     </div>
     <div class="navbar-right">
@@ -27,12 +27,13 @@
         <option value="uz" <%= locale === 'uz' ? 'selected' : '' %>>UZ</option>
       </select>
       <% if (user) { %>
+        <a href="/history" class="nav-link"><%= t('nav_history') %></a>
         <span class="nav-link"><%= user.username %></span>
         <button id="logout-btn" class="btn-outline" type="button">Logout</button>
       <% } else { %>
         <a href="/login" class="btn-outline">Login</a>
       <% } %>
-      <a href="#form-section" class="btn-nav-cta"><%= t('btn_generate') %></a>
+      <a href="/#form-section" class="btn-nav-cta"><%= t('btn_generate') %></a>
     </div>
   </div>
 </header>

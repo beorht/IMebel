@@ -2,6 +2,7 @@
   "nav_generate": "Yaratish",
   "nav_gallery": "Galereya",
   "nav_models": "Modellar",
+  "nav_history": "Mening generatsiyalarim",
   "lang_switch": "UZ",
   "lang_label": "Til",
 
@@ -137,5 +138,10 @@
   "auth_go_login": "Kirish",
   "auth_gate_title": "Generatsiya qilish uchun tizimga kiring",
   "auth_gate_sub": "Parametrlarni to'ldirib mebel renderlarini yaratish uchun hisob yarating yoki tizimga kiring.",
-  "auth_gate_login": "Kirish / Ro'yxatdan o'tish"
+  "auth_gate_login": "Kirish / Ro'yxatdan o'tish",
+
+  "history_title": "Mening generatsiyalarim",
+  "history_sub": "Ushbu hisob bilan yaratilgan barcha renderlar",
+  "history_empty_title": "Hozircha generatsiyalar yo'q",
+  "history_empty_sub": "Ko'rish uchun birinchi mebel renderini yarating"
 }

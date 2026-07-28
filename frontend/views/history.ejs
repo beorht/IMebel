@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <%- include('partials/header') %>
+
+  <section class="results-section" id="results-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title"><%= t('history_title') %></h2>
+        <p class="section-sub"><%= t('history_sub') %></p>
+      </div>
+      <main class="output-area" id="history-area">
+        <div class="output-placeholder" id="history-placeholder">
+          <div class="placeholder-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+          <p class="placeholder-text"><%= t('history_empty_title') %></p>
+          <p class="placeholder-sub"><%= t('history_empty_sub') %></p>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <script>window.__LOCALE__ = '<%= locale %>';</script>
+  <script>window.__T__ = <%- JSON.stringify(translations) %>;</script>
+  <script type="module" src="/js/history.js"></script>
+</body>
+</html>

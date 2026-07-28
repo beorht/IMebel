@@ -45,6 +45,9 @@ const findUserByIdStmt = db.prepare(
 const insertGenerationStmt = db.prepare(
   'INSERT INTO generations (user_id, prompt, images_json) VALUES (?, ?, ?)'
 );
+const getGenerationsByUserStmt = db.prepare(
+  'SELECT id, prompt, images_json AS imagesJson, created_at AS createdAt FROM generations WHERE user_id = ? ORDER BY created_at DESC'
+);
 
 export function createUser(username, passwordHash) {
   const result = insertUserStmt.get(username, passwordHash);
@@ -61,6 +64,10 @@ export function findUserById(id) {
 
 export function insertGeneration(userId, prompt, imagesJson) {
   insertGenerationStmt.run(userId, prompt, imagesJson);
+}
+
+export function getGenerationsByUser(userId) {
+  return getGenerationsByUserStmt.all(userId);
 }
 
 export default db;

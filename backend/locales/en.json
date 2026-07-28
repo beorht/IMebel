@@ -2,6 +2,7 @@
   "nav_generate": "Generate",
   "nav_gallery": "Gallery",
   "nav_models": "Models",
+  "nav_history": "My Generations",
   "lang_switch": "RU",
   "lang_label": "Language",
 
@@ -137,5 +138,10 @@
   "auth_go_login": "Log in",
   "auth_gate_title": "Sign in to generate",
   "auth_gate_sub": "Create an account or log in to fill in the parameters and generate furniture renders.",
-  "auth_gate_login": "Log in / Sign up"
+  "auth_gate_login": "Log in / Sign up",
+
+  "history_title": "My Generations",
+  "history_sub": "Every render you've generated with this account",
+  "history_empty_title": "No generations yet",
+  "history_empty_sub": "Generate your first furniture render to see it here"
 }

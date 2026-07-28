@@ -223,6 +223,7 @@ function renderImageCard(view) {
   const imgSrc = view.url || '';
   const isMock = !imgSrc;
   const gradientId = `g-${view.id}`;
+  const ext = imgSrc.match(/\.\w+(?=$|\?)/)?.[0] || '.png';
 
   const colors = isMock
     ? [Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0'),
@@ -250,7 +251,7 @@ function renderImageCard(view) {
         <span>${view.size || ''}</span>
         <span>${view.date || ''}</span>
       </div>
-      ${imgSrc ? `<button class="btn-download" data-filename="${view.id}.png" data-imgurl="${imgSrc}">
+      ${imgSrc ? `<button class="btn-download" data-filename="${view.id}${ext}" data-imgurl="${imgSrc}">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
         </svg>
